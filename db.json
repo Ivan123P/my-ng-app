@@ -1,0 +1,11 @@
+{
+  "products": [
+    {"name": "lg", "category": "phone", "price": 500, "id": 1},
+    {"name": "nokia", "category": "phone", "price": 600, "id": 2},
+    {"name": "htc", "category": "phone", "price": 400, "id": 3},
+    {"name": "xiaomi", "category": "notebook", "price": 550, "id": 4},
+    {"name": "dell", "category": "notebook", "price": 650, "id": 5},
+    {"name": "sven", "category": "headset", "price": 800, "id": 6},
+    {"name": "koss", "category": "headset", "price": 800, "id": 7}
+  ]
+}

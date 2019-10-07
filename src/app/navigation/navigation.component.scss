@@ -1,0 +1,42 @@
+.navigation {
+  &__list {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 25px 10px;
+    &-item {
+      width: 100%;
+      &-link {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background-color: #424281;
+        outline: none;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          background-color: darken(#424281, 10%);
+          box-shadow: none;
+        }
+        &.active {
+          color: #424281;
+          background-color: #c9f3c9;
+          border: 1px solid #424281;
+          box-shadow: none;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
