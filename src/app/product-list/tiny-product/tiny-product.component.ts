@@ -1,15 +1,17 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../product-list.component';
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/cart.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  selector: 'app-tiny-product',
+  templateUrl: './tiny-product.component.html',
+  styleUrls: ['./tiny-product.component.scss']
 })
 
-export class ProductComponent implements OnInit {
+export class TinyProductComponent implements OnInit {
 
-  @Input() public product: Product = null;
+  @Input() public tinyProduct: Product = null;
   @Output() public selectedProduct: EventEmitter<Product> = new EventEmitter<Product>();
 
   public settings = {
@@ -20,19 +22,27 @@ export class ProductComponent implements OnInit {
 
   public buttonText: string = 'купить';
 
-  constructor() { }
+  constructor( 
+    private router: Router,
+    private cartService: CartService
+  ) { }
 
   ngOnInit() {
     this.setClass();
   }
 
   public toCart(): void {
-    this.selectedProduct.emit(this.product);
+    // this.selectedProduct.emit(this.tinyProduct);
+    this.cartService.setTotal(this.tinyProduct.price);
     this.buttonText = 'в корзине';
   }
 
+  public viewProduct(id: number): void {
+    this.router.navigate(['/product/', id]);
+  }
+
   private setClass(): void {
-    switch (this.product.category.toLowerCase()) {
+    switch (this.tinyProduct.category.toLowerCase()) {
       case 'phone': 
         this.settings['product--phone'] = true;
         break;

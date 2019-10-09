@@ -47,5 +47,14 @@
       background-color: darken(#6ab96a, 5%);
       box-shadow: none;
     }
+    &--product {
+      background-color: #424281;
+      &:hover {
+        background-color: darken(#424281, 5%);
+      }
+    }
+    &:not(:last-of-type) {
+      margin-right: 15px;
+    }
   }
 }

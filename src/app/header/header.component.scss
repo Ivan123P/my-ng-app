@@ -1,12 +1,36 @@
 .header {
   position: relative;
   z-index: 1;
-  padding: 25px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px 15px;
   box-shadow: 0 0 4px 0px black;
   background-color: #c9f3c9;
   &__title {
     font-family: sans-serif;
     font-size: 30px;
     text-align: center;
+  }
+  &__informer {
+    position: relative;
+    color: #9b9b9b;
+    cursor: default;
+    &.not_empty {
+      color: #424281;
+      cursor: pointer;
+    }
+    &-icon {
+      display: block;
+      width: 35px;
+      height: 35px;
+    }
+    &-counter {
+      position: absolute;
+      bottom: 100%;
+      right: 50%;
+      transform: translateX(50%);
+      white-space: nowrap;
+    }
   }
 }

@@ -1,0 +1,7 @@
+<div class="product" [ngClass]="settings" >
+  <div class="product__name">{{ tinyProduct.name }}</div>
+  <div class="product__category">{{ tinyProduct.category }}</div>
+  <div class="product__price">Цена {{ tinyProduct.price }}</div>
+  <button class="product__btn product__btn--product" (click)="viewProduct(tinyProduct.id)">Детальнее</button>
+  <button class="product__btn" (click)="toCart()">{{ buttonText }}</button>
+</div>

@@ -7,9 +7,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductComponent } from './product-list/product/product.component';
+import { TinyProductComponent } from './product-list/tiny-product/tiny-product.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { ProductComponent } from './product/product.component';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart.service';
 
 @NgModule({
   declarations: [
@@ -17,19 +20,24 @@ import { MainPageComponent } from './main-page/main-page.component';
     HeaderComponent,
     FooterComponent,
     ProductListComponent,
-    ProductComponent,
+    TinyProductComponent,
     NavigationComponent,
-    MainPageComponent
+    MainPageComponent,
+    ProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: MainPageComponent},
-      {path: 'products', component: ProductListComponent}
+      {path: 'products', component: ProductListComponent},
+      {path: 'product/:id', component: ProductComponent}
     ]),
   ],
-  providers: [],
+  providers: [
+    CartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

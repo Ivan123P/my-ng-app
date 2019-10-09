@@ -13,4 +13,8 @@ export class DataService {
   public getProducts(): Observable<any> {
     return this.http.get('http://localhost:3000/products');
   }
+
+  public getProductById(id:number): Observable<any> {
+    return this.http.get(`http://localhost:3000/products/${id}`);
+  }
 }

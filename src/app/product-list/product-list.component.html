@@ -38,8 +38,8 @@
     </span>
   </div>
   <ul class="products__list">
-    <li class="products__list-item" [class.products__list-item--fluid]="isFluidItem" *ngFor="let product of productList">
-      <app-product (selectedProduct)="toCart($event)" [product]="product"></app-product>
+    <li class="products__list-item" [class.products__list-item--fluid]="isFluidItem" *ngFor="let tinyProduct of productList">
+      <app-tiny-product (selectedProduct)="toCart($event)" [tinyProduct]="tinyProduct"></app-tiny-product>
     </li>
   </ul>
 </section>
