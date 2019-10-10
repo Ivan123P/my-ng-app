@@ -9,7 +9,11 @@ import { Product } from '../product-list/product-list.component';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  private product: Product;
+  private product: Product = {
+    name: 'name',
+    category: 'cat',
+    price: 0
+  };
 
   constructor(
     private router: Router,

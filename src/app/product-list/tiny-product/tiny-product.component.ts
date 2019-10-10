@@ -32,7 +32,6 @@ export class TinyProductComponent implements OnInit {
   }
 
   public toCart(): void {
-    // this.selectedProduct.emit(this.tinyProduct);
     this.cartService.setTotal(this.tinyProduct.price);
     this.buttonText = 'в корзине';
   }

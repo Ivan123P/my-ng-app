@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,16 +7,20 @@ import { Injectable } from '@angular/core';
 
 export class CartService {
 
+  private subject = new Subject<number>();
   private total: number = 0;
 
   constructor() { }
 
-  public setTotal(price: number): void {
-    this.total += price;
-    console.log(this.total);
+  setTotal(total: number) {
+    this.subject.next(this.total += total);
   }
 
-  public getTotal(): number {
-    return this.total;
+  clearTotal() {
+    this.subject.next();
+  }
+
+  getTotal(): Observable<number>{
+    return this.subject.asObservable();
   }
 }
